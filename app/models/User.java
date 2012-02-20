@@ -20,7 +20,6 @@ public class User extends Model {
 	public String password ;
 	public String fbuser;
 	public String token;
-	@ManyToOne
 	public Role role;
 	/**
 	 * 
