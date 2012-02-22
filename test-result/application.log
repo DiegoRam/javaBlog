@@ -1,0 +1,5 @@
+20 Feb 2012 20:36:52,713 INFO  ~ Starting /home/diego/workspace/javaBlog/.
+20 Feb 2012 20:36:52,719 INFO  ~ Module openshift is available (/usr/share/play-1.2.4/modules/openshift-0.1.0)
+20 Feb 2012 20:36:53,469 WARN  ~ You're running Play! in DEV mode
+20 Feb 2012 20:36:54,916 INFO  ~ Connected to jdbc:h2:mem:play;MODE=MYSQL;LOCK_MODE=0
+20 Feb 2012 20:36:55,758 INFO  ~ Application 'javablog' is now started !
