@@ -29,7 +29,7 @@ public class ModelTest extends UnitTest {
 		Post post = new Post("Un post de prueba", "Lorem Ipsum", newUser, createdAt);
 		assertNotNull(post);
 		post.save();
-		//retreive post data
+		//Retrieve post data
 		Post newPost = Post.find("author = ? ", newUser).first();
 		assertNotNull(newPost);
 		assertEquals("Diego", newPost.author.firstname);
