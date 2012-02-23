@@ -1,0 +1,6 @@
+# Application dependencies
+
+require:
+    - play
+    - play -> openshift 0.1.0
+
