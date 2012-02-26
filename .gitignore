@@ -13,5 +13,5 @@ tmp
 test-result
 eclipse/
 server.pid
-
+modules/
 target
