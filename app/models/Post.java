@@ -37,4 +37,8 @@ public class Post extends Model {
 		this.author = author;
 		this.createdat = createdat;
 	}
+	@Override
+	public String toString(){
+		return author.firstname + ": " + title ;
+	}
 }
