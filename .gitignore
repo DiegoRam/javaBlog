@@ -8,6 +8,9 @@ db
 eclipse/
 log
 logs
+.classpath
+.settings/
+.project
 #precompiled
 tmp
 test-result
