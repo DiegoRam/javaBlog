@@ -18,5 +18,9 @@ public class Application extends Controller {
     public static void contact() {
         render("@index");
     }
+    
+    public static void viewPost(long postId){
+    	render();
+    }
 
 }

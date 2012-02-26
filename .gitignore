@@ -5,13 +5,13 @@
 
 # Ignore Play! working directory #
 db
-eclipse
+eclipse/
 log
 logs
 #precompiled
 tmp
 test-result
-eclipse
+eclipse/
 server.pid
 
 target
