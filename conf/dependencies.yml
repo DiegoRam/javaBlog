@@ -3,4 +3,6 @@
 require:
     - play
     - play -> openshift 0.1.0
+    - play -> crud
+    - play -> secure
 
