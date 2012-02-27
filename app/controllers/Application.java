@@ -2,10 +2,9 @@ package controllers;
 
 import play.*;
 import play.mvc.*;
+import play.mvc.results.NotFound;
+import models.Post;
 
-import java.util.*;
-
-import models.*;
 
 public class Application extends Controller {
 
@@ -19,8 +18,13 @@ public class Application extends Controller {
         render("@index");
     }
     
-    public static void viewPost(long postId){
-    	render();
-    }
+    public static void viewPost(long postid){
+    	Post post = Post.findById(postid);
+    	if (post == null){
+    		notFound(); 
+    	}else {
+			render(post);
+		}
+	}
 
 }
