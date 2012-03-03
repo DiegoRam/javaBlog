@@ -11,6 +11,7 @@ logs
 .classpath
 .settings/
 .project
+modules/
 #precompiled
 tmp
 test-result
