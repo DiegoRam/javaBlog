@@ -19,31 +19,16 @@
 					</div> <!-- span4 -->
 				</div> <!-- row -->
 				<hr>
-				<div class = "row">
-					<div class="span4">
-						<h4>Diego Ramirez: </h4>
-						<p><em>Alto negro de mierda!!</em></p>
-					</div>
-				</div>
-				<div class = "row">
-					<div class="span4">
-						<h4>Diego Ramirez: </h4>
-						<p><em>Alto negro de mierda!!</em></p>
-					</div>
-				</div>				  
-				<div class = "row">
-					<div class="span4">
-						<h4>Diego Ramirez: </h4>
-						<p><em>Alto negro de mierda!!</em></p>
-					</div>
-				</div>				  
-				<div class = "row">
-					<div class="span4">
-						<h4>Diego Ramirez: </h4>
-						<p><em>Alto negro de mierda!!</em></p>
-					</div>
-				</div>				  
-								  
+				#{if post.comments.size() > 0}
+					#{list items:post.comments, as:'comment'}
+						<div class = "row">
+							<div class="span4">
+								<h4>${comment.author.firstname} ${comment.author.lastname}: </h4>
+								<p><em>${comment.text}</em></p>
+							</div>
+						</div>
+					#{/list}								  
+				#{/if}
 	  </div> <!--span7 -->  
 	</div> <!--offset2 -->  
 </div> <!-- container -->    
