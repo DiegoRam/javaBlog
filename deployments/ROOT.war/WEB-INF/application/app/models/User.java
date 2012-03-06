@@ -36,4 +36,8 @@ public class User extends Model {
 		this.password = pass ;
 		
 	}
+	@Override
+	public String toString(){
+		return lastname + ' ' + firstname ;
+	}
 }

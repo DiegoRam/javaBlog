@@ -9,12 +9,14 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import play.data.validation.MaxSize;
 import play.db.jpa.Model;
 @Entity
 public class Post extends Model {
 	
 	public String title;
 	@Lob
+	@MaxSize(16000)
 	public String text ;
 	@ManyToOne
 	public User author;
@@ -36,5 +38,9 @@ public class Post extends Model {
 		this.text = text;
 		this.author = author;
 		this.createdat = createdat;
+	}
+	@Override
+	public String toString(){
+		return id.toString() +"-"+ author.firstname + ": " + title ;
 	}
 }

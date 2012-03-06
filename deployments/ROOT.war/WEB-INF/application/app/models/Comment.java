@@ -31,6 +31,10 @@ public class Comment extends Model {
 		this.text = text;
 		this.postedat = postedat;
 	}
+	@Override
+	public String toString(){
+		return author.firstname + ": " + text ;
+	}
 	
 	
 	
