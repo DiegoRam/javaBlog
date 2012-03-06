@@ -3,9 +3,12 @@
 <div class = "breadcrumb">
 	<a>Home</a> -> <a class = "active" >Primer post</a>
 </div>
-<div class = "container">
-	<div class = "offset2">
-	    <div class="span7">
+<div class = "row">
+	<div class = "container">
+		<div class = "span1">
+			<p></p>
+		</div>
+	    <div class="span10">
 		       <div class="hero-unit">
 			        <h1>${post.title}</h1>
 			        <br>
@@ -13,22 +16,45 @@
 			        ${post.text.raw()}
 			        </article>
 				</div> <!--hero unit -->
-				<div class="row">
-					<div class="span4">
-						<h2>Comentarios</h2>
-					</div> <!-- span4 -->
-				</div> <!-- row -->
-				<hr>
-				#{if post.comments.size() > 0}
-					#{list items:post.comments, as:'comment'}
-						<div class = "row">
-							<div class="span4">
-								<h4>${comment.author.firstname} ${comment.author.lastname}: </h4>
-								<p><em>${comment.text}</em></p>
-							</div>
-						</div>
-					#{/list}								  
-				#{/if}
-	  </div> <!--span7 -->  
-	</div> <!--offset2 -->  
-</div> <!-- container -->    
+	  	</div> <!--span6 -->
+	  	<div class = "span1">
+			<p></p>
+		</div> 	
+	  
+</div> <!-- container -->
+</div> <!-- row -->
+<div class="row">
+	<div class = "container">
+			<div class="span1">
+				<p></p>
+			</div> <!-- span1 -->
+	
+			<div class="span10">
+				<h2>Comentarios</h2>
+			</div> <!-- span10 -->
+			<div class="span1">
+				<p></p>
+			</div> <!-- span1 -->
+	</div>
+</div> <!-- row -->
+
+#{if post.comments.size() > 0}
+	#{list items:post.comments, as:'comment'}
+		<hr>
+		<div class = "row">
+			<div class = "container">
+				<div class="span1">
+					<p></p>
+				</div> <!-- span1 -->
+				<div class="span10">
+					<h4>${comment.author.firstname} ${comment.author.lastname}: </h4>
+					<p><em>${comment.text}</em></p>
+				</div>
+				<div class="span1">
+					<p></p>
+				</div> <!-- span1 -->				
+			</div>
+		</div> <!--row -->
+	#{/list}								  
+#{/if}
+  
