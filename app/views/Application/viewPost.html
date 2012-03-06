@@ -1,7 +1,11 @@
 #{extends 'main.html' /}
 #{set title:"Titulo del post" /}
 <div class = "breadcrumb">
-	<a>Home</a> -> <a class = "active" >Primer post</a>
+<ul>
+<li><a href="@{Application.index()}">Home</a></li>
+<li class = "divider">-></li>
+<li class="active"><a href="@{Application.viewPost(post.id)}">${post.title.substring(0,20)}</a></li>
+</ul>
 </div>
 <div class = "row">
 	<div class = "container">
