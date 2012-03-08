@@ -8,7 +8,7 @@ application.name=javablog
 # Otherwise set to prod.
 %dev.application.mode=dev
 application.mode=prod
-%war.application.mode=prod
+%war.application.mode=war
 # Secret key
 # ~~~~~
 # The secret key is used to secure cryptographics functions
