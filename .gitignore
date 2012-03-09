@@ -8,6 +8,8 @@ db
 eclipse
 log
 logs
+src
+
 #precompiled
 tmp
 test-result
