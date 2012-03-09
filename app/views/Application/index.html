@@ -3,6 +3,7 @@
 
 
     <div class="container">
+      #{if newestPosts.size() > 0 }
 
       <!-- Main hero unit for a primary marketing message or call to action -->
       <div class="hero-unit">
@@ -11,7 +12,7 @@
         <p> ${newestPosts.get(0).text.substring(0,200).concat("...").raw() } </p>
         <p><a class="btn btn-primary btn-large" href = "@{Application.viewPost(newestPosts.get(0).id)}" >Ver más »</a></p>
       </div>
-
+	 #{/if}
 
       <div class="row">
        	#{if newestPosts.size() > 1 }
