@@ -9,8 +9,8 @@ eclipse
 log
 logs
 src
-
-#precompiled
+deployments
+#recompiled
 tmp
 test-result
 eclipse
