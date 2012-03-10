@@ -9,6 +9,7 @@ eclipse
 log
 logs
 bin
+modules
 #precompiled
 tmp
 test-result
