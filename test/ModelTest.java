@@ -35,7 +35,7 @@ public class ModelTest extends UnitTest {
 		assertEquals("Diego", newPost.author.firstname);
 		
 		//Comment
-		Comment comment = new Comment(newPost, newUser, "este blog no me cabe ni un poco", createdAt);
+		Comment comment = new Comment(newPost, newUser,"Diego", "este blog no me cabe ni un poco", createdAt);
 		assertNotNull(comment);
 		comment.save();
 		//retrieve comment data
