@@ -1,0 +1,22 @@
+#{form @Application.saveComment(_postId)}
+
+<fieldset>
+<legend> Agregate uno </legend>
+
+          <div class="clearfix">
+            <label for="">Nombre</label>
+            <div class="input">
+              <input type="text" size="50" name="firstname" id="xlInput" class="xlarge" value = "${params.firstname}">
+            </div>
+            <div class="input">
+               <textarea name="texto" id="textarea" class="xxlarge">${params.texto}</textarea>
+            </div>
+
+	    </div> <!-- /clearfix -->
+	      <div class="actions">
+            <button class="btn primary" type="submit">Guardar</button>&nbsp;<button class="btn" type="reset">Cancelar</button>
+          </div>
+	    
+</fieldset>
+
+#{/form}

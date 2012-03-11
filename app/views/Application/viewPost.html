@@ -4,7 +4,7 @@
 <ul>
 <li><a href="@{Application.index()}">Home</a></li>
 <li class = "divider">-></li>
-<li class="active"><a href="@{Application.viewPost(post.id)}">${post.title.substring(0,20)}</a></li>
+<li class="active"><a href="@{Application.viewPost(post.id)}"> #{if post.title.length() >= 20} ${post.title.substring(0,20)} #{/if} #{else} ${post.title} #{/else} </a></li>
 </ul>
 </div>
 <div class = "row">
@@ -35,6 +35,10 @@
 	
 			<div class="span10">
 				<h2>Comentarios</h2>
+				#{if flash.success}
+    				<p class="success">${flash.success}</p>
+				#{/if}
+
 			</div> <!-- span10 -->
 			<div class="span1">
 				<p></p>
@@ -42,16 +46,35 @@
 	</div>
 </div> <!-- row -->
 
+<div class="row">
+	<div class = "container">
+			<div class="span1">
+				<p></p>
+			</div> <!-- span1 -->
+	
+			<div class="span10">
+				#{formComment  postId : post.id /}
+			</div> <!-- span10 -->
+			<div class="span1">
+				<p></p>
+			</div> <!-- span1 -->
+	</div>
+</div> <!-- row -->
+
+
 #{if post.comments.size() > 0}
 	#{list items:post.comments, as:'comment'}
-		<hr>
+
 		<div class = "row">
 			<div class = "container">
 				<div class="span1">
 					<p></p>
 				</div> <!-- span1 -->
 				<div class="span10">
-					<h4>${comment.author.firstname} ${comment.author.lastname}: </h4>
+					%{
+						name = comment.author!=null ? comment.author.firstname : comment.author_firstname ;  
+					}%
+					<h4>${name}: </h4>
 					<p><em>${comment.text}</em></p>
 				</div>
 				<div class="span1">
