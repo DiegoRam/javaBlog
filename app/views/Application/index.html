@@ -16,17 +16,21 @@
 
       <div class="row">
        	#{if newestPosts.size() > 1 }
-			#{olderPost title:newestPosts.get(1).title , text : newestPosts.get(1).text.substring(0,100).concat("....").raw() }
+			#{olderPost title:newestPosts.get(1).title , text : newestPosts.get(1).text.substring(0,100).concat("....").raw()
+			, oldPostId: newestPosts.get(1).id }
 			#{/olderPost}
         #{/if}
 
        	#{if newestPosts.size() > 2}
-			#{olderPost title:newestPosts.get(2).title , text : newestPosts.get(2).text.substring(0,100).concat("....").raw() }
+			#{olderPost title:newestPosts.get(2).title , text : newestPosts.get(2).text.substring(0,100).concat("....").raw() 
+			, oldPostId: newestPosts.get(2).id }
 			#{/olderPost}
         #{/if}
 
        	#{if newestPosts.size() > 3}
-			#{olderPost title:newestPosts.get(3).title , text : newestPosts.get(3).text.substring(0,100).concat("....").raw() }
+			#{olderPost title:newestPosts.get(3).title , text : newestPosts.get(3).text.substring(0,100).concat("....").raw()
+			, oldPostId: newestPosts.get(3).id }
+
 			#{/olderPost}
         #{/if}
 
