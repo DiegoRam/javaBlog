@@ -2,6 +2,12 @@
 
 <fieldset>
 <legend> Agregate uno </legend>
+			#{if flash.success}
+    				<p class="alert-success">${flash.success}</p>
+			#{/if}
+			#{if flash.error}
+					<p class="alert-error">${flash.error}</p>
+			#{/if}
 
           <div class="clearfix">
             <label for="">Nombre</label>

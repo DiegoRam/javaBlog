@@ -43,6 +43,7 @@ public class Application extends Controller {
     	
     	Comment comment = new Comment(post, null,firstname, texto, new Date(System.currentTimeMillis()));
     	if (validation.hasErrors()){
+    		flash.error("Cuac!");
     		render("Application/viewPost.html",post);
     	}
     	comment.save();
