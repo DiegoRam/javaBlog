@@ -1,19 +1,21 @@
-<!DOCTYPE html>
+#{extends 'main.html' /}
+#{set title:"@diegoram's blog" /}
 
-<html>
-    <head>
-        <title>Not found</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=${_response_encoding}"/>    
-    </head>
-    <body>
-        #{if play.mode.name() == 'DEV'}
-            #{404 result /}
-        #{/if}
-        #{else}
-            <h1>Not found</h1>
-            <p>
-                ${result.message}
-            </p>
-        #{/else}
-    </body>
-</html>
+<div class = "row">
+
+		<div class = "span3"><p></p></div>
+		<div class = "span9">
+			<p><img src="@{'/public/images/tecabio.jpg'}" /></p>  
+		</div>
+
+</div>
+
+<div class = "row">
+
+	<!-- <div class = "span2"><p></p></div>  -->	
+		<div class = "offset5">
+			<h1>404 furiosOOOOOOO!</h1>
+		</div>
+
+</div>
+
