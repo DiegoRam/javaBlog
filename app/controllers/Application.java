@@ -21,10 +21,10 @@ public class Application extends Controller {
         render(newestPosts);
     }
     public static void about() {
-        render("@index");
+        notFound();
     }
     public static void contact() {
-        render("@index");
+        notFound();
     }
     
     public static void viewPost(long postid){
