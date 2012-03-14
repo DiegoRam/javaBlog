@@ -5,4 +5,4 @@ require:
     - play -> openshift 0.1.2
     - play -> crud
     - play -> secure
-
+    - play -> morphia 1.2.4

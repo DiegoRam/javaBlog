@@ -3,24 +3,22 @@ package models;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.Lob;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+
+import com.google.code.morphia.annotations.Entity;
+import com.google.code.morphia.annotations.Reference;
 
 import play.data.validation.MaxSize;
-import play.db.jpa.Model;
+import play.modules.morphia.Model;
+
 @Entity
 public class Post extends Model {
 	
 	public String title;
-	@Lob
 	@MaxSize(16000)
 	public String text ;
-	@ManyToOne
+	@Reference
 	public User author;
-	@OneToMany(mappedBy = "post" , cascade = CascadeType.ALL)
+	@Reference
 	public List<Comment> comments ;
 	public Date createdat;
 	public Date published;
@@ -41,6 +39,6 @@ public class Post extends Model {
 	}
 	@Override
 	public String toString(){
-		return id.toString() +"-"+ author.firstname + ": " + title ;
+		return this.getId().toString() +"-"+ author.firstname + ": " + title ;
 	}
 }

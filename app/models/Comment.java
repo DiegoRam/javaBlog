@@ -1,23 +1,20 @@
 package models;
 
 import java.util.Date;
-
-import javax.persistence.Entity;
-import javax.persistence.Lob;
-import javax.persistence.ManyToOne;
-
+import com.google.code.morphia.annotations.Entity;
+import com.google.code.morphia.annotations.Reference;
 import play.data.validation.Required;
-import play.db.jpa.Model;
+import play.modules.morphia.Model;
+
 @Entity
 public class Comment extends Model {
 	
 	public Date postedat;
-	@Lob
 	@Required
 	public String text ;
-	@ManyToOne
+	@Reference
 	public Post post;
-	@ManyToOne
+	@Reference
 	public User author;
 	@Required
 	public String author_firstname;

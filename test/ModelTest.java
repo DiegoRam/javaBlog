@@ -1,12 +1,15 @@
 import static org.junit.Assert.*;
 
 import java.sql.Date;
+import java.util.List;
 
 import models.Comment;
 import models.Post;
 import models.User;
 
 import org.junit.Test;
+
+import com.google.code.morphia.Key;
 
 import play.test.UnitTest;
 
@@ -20,7 +23,8 @@ public class ModelTest extends UnitTest {
 		user.save();
 		
 		//retrieve user data
-		User newUser = User.find("username = ?", "diego").first();
+		//User newUser = User.find("username = ?", "diego").first();
+		User newUser = User.q().filter("username =","diego").first();
 		assertNotNull(newUser);
 		assertEquals("Diego", newUser.firstname);
 		
@@ -30,7 +34,16 @@ public class ModelTest extends UnitTest {
 		assertNotNull(post);
 		post.save();
 		//Retrieve post data
-		Post newPost = Post.find("author = ? ", newUser).first();
+		Key<User> usrKey = User.find("firstname","Diego").getKey();
+		Post newPost = Post.find("author", usrKey).first();
+		
+		//Lo que tiene de poderosisimo es que puedo traer una lista de Keys author para trer toda la lista de posta con esos autores
+		//como hacer un select in
+		//String[] emails = {"greenlaw110@gmail.com", "greenlaw110@hotmail.com"};
+		//List<Key<User>> usrKeys = User.find("email in",emails).asKeyList();
+		//List<Post> newPosts = Post.q().filter("author in", usrKeys).asList();
+		
+		
 		assertNotNull(newPost);
 		assertEquals("Diego", newPost.author.firstname);
 		
@@ -39,7 +52,7 @@ public class ModelTest extends UnitTest {
 		assertNotNull(comment);
 		comment.save();
 		//retrieve comment data
-		Comment newComment = Comment.find("post = ?", newPost).first();
+		Comment newComment = Comment.q().filter("post = ?", newPost).first();
 		assertNotNull(newComment);
 		assertEquals("Diego", newComment.post.author.firstname);
 		
