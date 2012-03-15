@@ -1,19 +1,19 @@
 package models;
 
 import java.util.Date;
+
+import com.google.code.morphia.annotations.Embedded;
 import com.google.code.morphia.annotations.Entity;
 import com.google.code.morphia.annotations.Reference;
 import play.data.validation.Required;
 import play.modules.morphia.Model;
 
-@Entity
+@Embedded
 public class Comment extends Model {
 	
 	public Date postedat;
 	@Required
 	public String text ;
-	@Reference
-	public Post post;
 	@Reference
 	public User author;
 	@Required
@@ -26,9 +26,8 @@ public class Comment extends Model {
 	 * @param text
 	 * @param postedat
 	 */
-	public Comment(Post post, User author, String author_name, String text, Date postedat) {
+	public Comment(User author, String author_name, String text, Date postedat) {
 		super();
-		this.post = post;
 		this.author = author;
 		this.text = text;
 		this.postedat = postedat;

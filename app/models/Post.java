@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 
+import com.google.code.morphia.annotations.Embedded;
 import com.google.code.morphia.annotations.Entity;
 import com.google.code.morphia.annotations.Reference;
 
@@ -18,7 +19,7 @@ public class Post extends Model {
 	public String text ;
 	@Reference
 	public User author;
-	@Reference
+	@Embedded
 	public List<Comment> comments ;
 	public Date createdat;
 	public Date published;
