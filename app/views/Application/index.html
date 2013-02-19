@@ -2,37 +2,61 @@
 #{set title:"@diegoram's blog" /}
 
 
-    <div class="container">
-      #{if newestPosts.size() > 0 }
+    <div class="container-fluid">
 
-      <!-- Main hero unit for a primary marketing message or call to action -->
-      <div class="hero-unit">
-       	<h1>${newestPosts.get(0).title}</h1>
-       	<br>
-        <p> ${newestPosts.get(0).text.substring(0,200).concat("...").raw() } </p>
-        <p><a class="btn btn-primary btn-large" href = "@{Application.viewPost(newestPosts.get(0).id)}" >Ver más »</a></p>
+      <div class="row-fluid">
+        <div class="page-header offset1">
+          <h1>No land for old programmers.</h1>
+        </div>
       </div>
-	 #{/if}
+      #{if newestPosts.size() > 0 }
+      <div class="row-fluid">
 
-      <div class="row">
-       	#{if newestPosts.size() > 1 }
-			#{olderPost title:newestPosts.get(1).title , text : newestPosts.get(1).text.substring(0,100).concat("....").raw()
-			, oldPostId: newestPosts.get(1).id }
-			#{/olderPost}
-        #{/if}
+        <div class="span8 offset1">        
+      
 
-       	#{if newestPosts.size() > 2}
-			#{olderPost title:newestPosts.get(2).title , text : newestPosts.get(2).text.substring(0,100).concat("....").raw() 
-			, oldPostId: newestPosts.get(2).id }
-			#{/olderPost}
-        #{/if}
+          <div class="hero-unit">
+           	<h1>${newestPosts.get(0).title}</h1>
+           	<br>
+            <p> ${newestPosts.get(0).text.substring(0,600).concat("...").raw() } </p>
+            <p><a class="btn btn-primary btn-large" href = "@{Application.viewPost(newestPosts.get(0).id)}#disqus_thread" >Ver más »</a></p>
+          </div>
+    	 #{/if}
 
-       	#{if newestPosts.size() > 3}
-			#{olderPost title:newestPosts.get(3).title , text : newestPosts.get(3).text.substring(0,100).concat("....").raw()
-			, oldPostId: newestPosts.get(3).id }
+        <div class="row">
+         	#{if newestPosts.size() > 1 }
+  			#{olderPost title:newestPosts.get(1).title , text : newestPosts.get(1).text.substring(0,100).concat("....").raw()
+  			, oldPostId: newestPosts.get(1).id }
+  			#{/olderPost}
+          #{/if}
 
-			#{/olderPost}
-        #{/if}
+         	#{if newestPosts.size() > 2}
+  			#{olderPost title:newestPosts.get(2).title , text : newestPosts.get(2).text.substring(0,100).concat("....").raw() 
+  			, oldPostId: newestPosts.get(2).id }
+  			#{/olderPost}
+          #{/if}
+
+         	#{if newestPosts.size() > 3}
+  			#{olderPost title:newestPosts.get(3).title , text : newestPosts.get(3).text.substring(0,100).concat("....").raw()
+  			, oldPostId: newestPosts.get(3).id }
+
+  			#{/olderPost}
+          #{/if}
+
+        </div>
+      </div>
+      <div class="span2">
+        <div class="row-fluid">
+          <div class="hero-unit">
+            <img src="@{'/public/images/tyd.png'}" class="img-polaroid">
+          </div>
+        </div>
+        <div class="row-fluid">
+          <p>My name is <strong>Diego Ramirez</strong>.
+            Lazy Engineer Student, extremely passionate developer. Tatooed Bookworm
+          </p>
+          <p>On my endless quest of tech wisdom I've met great people && friends </p>
+        </div>
 
       </div>
 
