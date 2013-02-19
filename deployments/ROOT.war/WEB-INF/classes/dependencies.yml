@@ -1,8 +1,0 @@
-# Application dependencies
-
-require:
-    - play
-    - play -> openshift 0.1.2
-    - play -> crud
-    - play -> secure
-
