@@ -9,6 +9,7 @@ GET		/admin									module:crud
 # Ignore favicon requests
 #GET     /favicon.ico                            404
 POST 	 /posts/{postId}/comments				Application.saveComment
+GET		/contact/							    Application.contact
 
 
 # Map static resources from the /app/public folder to the /public path

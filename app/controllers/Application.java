@@ -24,7 +24,7 @@ public class Application extends Controller {
         notFound();
     }
     public static void contact() {
-        notFound();
+        render();
     }
     
     public static void viewPost(long postid){
