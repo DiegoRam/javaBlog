@@ -19,7 +19,7 @@
            	<h1>${newestPosts.get(0).title}</h1>
            	<br>
             <p> ${newestPosts.get(0).text.substring(0,600).concat("...").raw() } </p>
-            <p><a class="btn btn-primary btn-large" href = "@{Application.viewPost(newestPosts.get(0).id)}#disqus_thread" >see more.. »</a></p>
+            <p><a class="btn btn-primary btn-large" href = "@{Application.viewPost(newestPosts.get(0).id)}" >see more.. »</a></p>
           </div>
     	 #{/if}
 
