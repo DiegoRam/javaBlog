@@ -29,11 +29,12 @@ public class Application extends Controller {
     
     public static void viewPost(long postid){
     	Post post = Post.findById(postid);
+        List<Post> posts = Post.findAll();
  
     	if (post == null){
     		notFound(); 
     	}else {
-			render(post);
+			render(post, posts);
 		}
 	}
     

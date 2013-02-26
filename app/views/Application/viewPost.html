@@ -6,12 +6,9 @@
 	<li class="active"><a href="@{Application.viewPost(post.id)}"> #{if post.title.length() >= 20} ${post.title.substring(0,20)} #{/if} #{else} ${post.title} #{/else} </a>
 	</li>
 </ul>
-<div class = "row">
-	<div class = "container">
-		<div class = "span1">
-			<p></p>
-		</div>
-	    <div class="span10">
+<div class = "container-fluid">
+	<div class = "row-fluid">
+	    <div class="span6 offset2">
 		       <div class="hero-unit">
 			        <h1>${post.title}</h1>
 			        <small>posted at ${post.published.toString()}</small>
@@ -34,56 +31,47 @@
 			     
 				</div> <!--hero unit -->
 	  	</div> <!--span6 -->
-	  	<div class = "span1">
-			<p></p>
+	  	<div class = "span2 offset1">
+			%{ for(postItem in posts) { }%
+				<h4><a href="@{Application.viewPost(postItem.id)}">${postItem.title}</a></h4>
+				<p>${postItem.text.substring(0,100).concat("....").raw()}
+				</p>
+			%{ } }%
+			
 		</div> 	
 	  
+	</div> <!-- row -->
+
+	<div class="row-fluid">
+		<div class="span6 offset2">
+			<h2>comments</h2>
+		</div> <!-- span10 -->
+		<div class="span2 offset1">
+			<p></p>
+		</div> <!-- span1 -->
+	</div> <!-- row -->
+
+	<div class="row-fluid">
+		<div class="span6 offset2">
+				<div id="disqus_thread"></div>
+			    <script type="text/javascript">
+			        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+			        var disqus_shortname = 'diegoram'; // required: replace example with your forum shortname
+
+			        /* * * DON'T EDIT BELOW THIS LINE * * */
+			        (function() {
+			            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+			            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			        })();
+			    </script>
+			    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+			    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+			
+		</div> <!-- span10 -->
+	</div> <!-- row -->
+
 </div> <!-- container -->
-</div> <!-- row -->
-<div class="row">
-	<div class = "container">
-			<div class="span1">
-				<p></p>
-			</div> <!-- span1 -->
-	
-			<div class="span10">
-				<h2>comments</h2>
-			</div> <!-- span10 -->
-			<div class="span1">
-				<p></p>
-			</div> <!-- span1 -->
-	</div>
-</div> <!-- row -->
-
-<div class="row">
-	<div class = "container">
-			<div class="span1">
-				<p></p>
-			</div> <!-- span1 -->
-	
-			<div class="span10">
- 				<div id="disqus_thread"></div>
-				    <script type="text/javascript">
-				        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-				        var disqus_shortname = 'diegoram'; // required: replace example with your forum shortname
-
-				        /* * * DON'T EDIT BELOW THIS LINE * * */
-				        (function() {
-				            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-				            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-				            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-				        })();
-				    </script>
-				    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-				    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-				
-			</div> <!-- span10 -->
-			<div class="span1">
-				<p></p>
-			</div> <!-- span1 -->
-	</div>
-</div> <!-- row -->
-
 
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
